@@ -26,6 +26,6 @@ export function BookProvider({children}){
     useEffect(()=>{getBooks()}, [])
 
     return(
-        <BookContext.Provider value={{bookState: state.books, categories, state, dispatch}}>{children}</BookContext.Provider>
+        <BookContext.Provider value={{bookState: state.books, categories, state, dispatch, selectedState: state.selectedCategoryState, searchState: state.search}}>{children}</BookContext.Provider>
     )
 }
