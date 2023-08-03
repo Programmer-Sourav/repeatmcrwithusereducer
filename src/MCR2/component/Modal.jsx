@@ -34,7 +34,7 @@ import { HabitContext } from "../contexts/HabitContext";
     const { state, dispatch } = useContext(HabitContext)
     
 
-    const addHabitToList = () =>{
+    const addHabitToList  = (habitTitle, habitGoal, habitFreq)  =>{
         dispatch({type:ACTION_TYPES_HABITS.ADD_HABIT,  payload: {title: habitTitle, goal: habitGoal, frequency: habitFreq}})
         setHabitTitle("")
     }
@@ -69,7 +69,7 @@ import { HabitContext } from "../contexts/HabitContext";
             </select>
             </label>
             </p>
-            <button className="buttonStyle" onClick={()=>{addHabitToList()}}>Add Habit</button>
+            <button className="buttonStyle" onClick={()=>addHabitToList(habitTitle, habitGoal, habitFreq)}>Add Habit</button>
            </ModalBody>
 
          <ModalFooter>
