@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { BookContext, BookProvider } from './MCR1/context/BookContext';
+import { HabitContext, HabitProvider } from './MCR2/contexts/HabitContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <BookProvider>
+    <HabitProvider>
     <App />
+    </HabitProvider>
     </BookProvider>
     </BrowserRouter>
   </React.StrictMode>

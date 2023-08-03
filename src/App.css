@@ -34,6 +34,29 @@
   margin: 8px;
 }
 
+.habitcard{
+  width: 256px;
+  height: 128px;
+  background-color: burlywood;
+  margin: 16px;
+}
+
+.habitcardview{
+  width: 256px;
+  height: 128px;
+  background-color: cornflowerblue;
+  margin: 16px;
+}
+
+.buttonStyle{
+  width: auto;
+  height: 40px;
+  padding: 8px;
+  margin: 8px;
+  background-color: orange;
+  color: white;
+}
+
 .App-link {
   color: #61dafb;
 }
