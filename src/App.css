@@ -57,6 +57,13 @@
   color: white;
 }
 
+.headerstyle{
+  width: 192px;
+  height: 40px;
+  background-color: bisque;
+  margin-left: 64px;
+}
+
 .App-link {
   color: #61dafb;
 }

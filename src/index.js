@@ -6,14 +6,19 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { BookContext, BookProvider } from './MCR1/context/BookContext';
 import { HabitContext, HabitProvider } from './MCR2/contexts/HabitContext';
+import { SnacksContext, SnacksProvider } from './MCR3/contexts/SnacksContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+export { BookContext, HabitContext, SnacksContext}
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <BookProvider>
     <HabitProvider>
+    <SnacksProvider>
     <App />
+    </SnacksProvider>
     </HabitProvider>
     </BookProvider>
     </BrowserRouter>
