@@ -5,12 +5,10 @@ import { ACTION_TYPES_HABITS } from "../../MCR2/reducer/DataReducer"
 
 export default function SnacksIndex(){
 
-    const { snacks, state, dispatch, searchState } = useContext(SnacksContext)
-
+    const { snacks, state, dispatch, searchState, searchedListState } = useContext(SnacksContext)
 
     const onChangeHandler = (e) =>{
-      console.log(e.target.value)  
-      dispatch({type: ACTION_TYPES_SNACKS.SEARCH, payload: searchState})
+      dispatch({type: ACTION_TYPES_SNACKS.SEARCH, payload: e.target.value})
     }
 
 
@@ -45,12 +43,14 @@ export default function SnacksIndex(){
         dispatch({type: ACTION_TYPES_SNACKS.SORT_BY_INGREDIENTS, payload: "dsc"})
     }
 
+    const filteredList = searchState ? searchedListState : snacks 
+
     return(
         <div> 
             <h1>Snacks Table</h1>
             {
                 <div>
-                <input type="search" value={searchState} placeholder="Search with name and ingredients" onChange={(e)=>{onChangeHandler(e)}}/>
+                <input type="search" value={searchState} placeholder="Search with name and ingredients" style={{width: "256px", height: "40px", margin: "8px"}} onChange={(e)=>{onChangeHandler(e)}}/>
                <table>
                 <tr>
                     <th className="headerstyle">
@@ -72,7 +72,7 @@ export default function SnacksIndex(){
                     <button style={{backgroundColor: "red"}} onClick={()=>{sortByDsc("ingredients")}}>Dsc</button>  Ingredients <button style={{backgroundColor: "green"}} onClick={()=>{sortByAsc("ingredients")}}>Asc</button>
                     </th>
                     </tr>
-                    { snacks.map((snack)=>(
+                    { filteredList.map((snack)=>(
                     <tr>
                     <td>
                      {snack.id}

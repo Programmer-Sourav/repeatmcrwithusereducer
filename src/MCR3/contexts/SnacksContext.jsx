@@ -12,8 +12,8 @@ export function SnacksProvider({children}){
 
     state.snacks = snacks
    
-
+    console.log(123, snacks)
     return(
-        <SnacksContext.Provider value={{snacks: state.snacks, state, dispatch, searchState: state.search}}>{children}</SnacksContext.Provider>
+        <SnacksContext.Provider value={{snacks: state.snacks, state, dispatch, searchState: state.search, searchedListState: state.searchedList}}>{children}</SnacksContext.Provider>
     )
 }
