@@ -41,6 +41,12 @@
   margin: 16px;
 }
 
+.receipecard{
+  width: 320px;
+  height: 320px;
+  margin: 16px;
+}
+
 .habitcardview{
   width: 256px;
   height: 128px;
