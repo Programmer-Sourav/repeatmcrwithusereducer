@@ -9,8 +9,8 @@ export function ReceipeProvider({children}){
   const [state, dispatch] = useReducer(ReceipeReducer, initialState) 
 
   
-
+   console.log(123, state.receipes)
    return(
-       <ReceipeContext.Provider value={{}}>{children}</ReceipeContext.Provider>
+       <ReceipeContext.Provider value={{state, dispatch, receipestate: state.receipes}}>{children}</ReceipeContext.Provider>
    )
 }

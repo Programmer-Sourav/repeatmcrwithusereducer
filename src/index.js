@@ -8,10 +8,11 @@ import { BookContext, BookProvider } from './MCR1/context/BookContext';
 import { HabitContext, HabitProvider } from './MCR2/contexts/HabitContext';
 import { SnacksContext, SnacksProvider } from './MCR3/contexts/SnacksContext';
 import { ForumContext, ForumProvider } from './MCR4/contexts/ForumContext';
+import { ReceipeContext, ReceipeProvider } from './MCR5/contexts/ReceipeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-export { BookContext, HabitContext, SnacksContext}
+export { BookContext, HabitContext, SnacksContext, ReceipeContext}
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -19,7 +20,9 @@ root.render(
     <HabitProvider>
     <SnacksProvider>
       <ForumProvider>
+        <ReceipeProvider>
     <App />
+    </ReceipeProvider>
     </ForumProvider>
     </SnacksProvider>
     </HabitProvider>

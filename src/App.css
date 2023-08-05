@@ -45,6 +45,7 @@
   width: 320px;
   height: 320px;
   margin: 16px;
+  border: "1px solid orange"
 }
 
 .habitcardview{

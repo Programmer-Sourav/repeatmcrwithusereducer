@@ -6,6 +6,8 @@ import { Route, Routes } from 'react-router';
 import HabitMain from './MCR2/pages/HabitMain';
 import SnacksIndex from './MCR3/pages/SnacksIndex';
 import Forum from './MCR4/pages/Forum';
+import ReceipeHome from './MCR5/pages/ReceipeHome';
+import ReceipeDetails from './MCR5/pages/ReceipeDetails';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path='/habitindex' element={<HabitMain/>}/>
         <Route path='/snacksindex' element={<SnacksIndex/>}/>
         <Route path='/forum' element={<Forum/>}/>
+        <Route path='/receipehome' element={<ReceipeHome/>}/>
+        <Route path='/receipe-details' element={<ReceipeDetails/>}/>
       </Routes>
     
     </div>
