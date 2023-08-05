@@ -13,6 +13,7 @@ export function ForumProvider({children}){
         dispatch({ type: ACTION_TYPES_FORUM.INITIALIZE, payload: forumData.posts });
       }, []);
 
+   
     return(
        <ForumContext.Provider value={{state, dispatch, forumstate: state.forum, filtered: state.forumData}}>{children}</ForumContext.Provider>
     )

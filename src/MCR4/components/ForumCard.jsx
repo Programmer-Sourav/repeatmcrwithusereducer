@@ -17,6 +17,10 @@ export default function ForumCard({data}){
       dispatch({type: ACTION_TYPES_FORUM.DOWNVOTES, payload: postId })
     }
 
+    const bookMark = (postId) =>{
+     dispatch({type: ACTION_TYPES_FORUM.BOOKMARK, payload: postId})
+    }
+
     return(
         <div class="cardthree">
         <div class="buttons">
@@ -30,7 +34,9 @@ export default function ForumCard({data}){
           <button>{tag}</button>
           )}
           <p>{data.postDescription}</p>
+          {data.isBookmarked ? <button style={{color: "red"}} onClick={()=>{bookMark(data.postId)}}>BookMark</button> : <button onClick={()=>{bookMark(data.postId)}}>BookMark</button> }
         </div>
+        
       </div>
     )
 }

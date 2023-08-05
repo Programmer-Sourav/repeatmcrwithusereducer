@@ -3,21 +3,32 @@ import "../stylesheets/navigationleft.css"
 import Navigation from "./Navigation"
 import { ForumContext } from "../contexts/ForumContext"
 import ForumCard from "../components/ForumCard"
+import { Button } from "@chakra-ui/react"
+import { ACTION_TYPES_FORUM } from "../reducer/ForumReducer"
 
 export default function Forum(){
 
-  const { forumstate, filtered } = useContext(ForumContext)
+  const { forumstate, filtered, dispatch } = useContext(ForumContext)
 
-   //const dataToShow = filtered.length >0 ? filtered : forumstate
+  const sortTrending = () =>{
+    dispatch({type: ACTION_TYPES_FORUM.SORT_TRENDING})
+  }
 
-   console.log(2233, forumstate)
+  const sortLatest = () =>{
+   dispatch({type: ACTION_TYPES_FORUM.SORT_LATEST})
+  }
 
     return (
             <div>
                 {
-                 forumstate.map((forum)=>(
+                 <ul> 
+                 <button onClick={()=>{sortTrending()}}>Trending</button>   
+                 <button onClick={()=>{sortLatest()}}>Latest</button>
+                 {forumstate.map((forum)=>(
                     <ForumCard data = {forum} />
                  ))
+                }
+                </ul>
                 }
             </div>
     )

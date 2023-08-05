@@ -8,7 +8,8 @@ export const ACTION_TYPES_FORUM = {
     SORT_TRENDING: "SORT_TRENDING", 
     UPVOTES: "UPVOTES", 
     DOWNVOTES: "DOWNVOTES", 
-    INITIALIZE: "INITIALIZE"
+    INITIALIZE: "INITIALIZE", 
+    BOOKMARK: "BOOKMARK"
 }
 
 export default function ForumReducer(state, action) {
@@ -25,6 +26,8 @@ export default function ForumReducer(state, action) {
         return {...state, forum: state.forum.map((stateItem)=>stateItem.postId===action.payload? {...stateItem, downvotes: stateItem.downvotes-1, upvotes: stateItem.upvotes - 1} : stateItem)}
         case ACTION_TYPES_FORUM.INITIALIZE: 
         return {...state, forum : action.payload}
+        case ACTION_TYPES_FORUM.BOOKMARK: 
+        return {...state, forum: state.forum.map((stateItem)=>stateItem.postId===action.payload ? {...stateItem, isBookmarked: !stateItem.isBookmarked } : stateItem)}
         default: 
         return state
     }
