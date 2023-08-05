@@ -8,14 +8,14 @@ export default function Forum(){
 
   const { forumstate, filtered } = useContext(ForumContext)
 
-   const dataToShow = filtered.length >0 ? filtered : forumstate
+   //const dataToShow = filtered.length >0 ? filtered : forumstate
 
-   console.log(2233, filtered)
+   console.log(2233, forumstate)
 
     return (
             <div>
                 {
-                 dataToShow.map((forum)=>(
+                 forumstate.map((forum)=>(
                     <ForumCard data = {forum} />
                  ))
                 }

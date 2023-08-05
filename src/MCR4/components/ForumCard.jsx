@@ -21,7 +21,7 @@ export default function ForumCard({data}){
         <div class="cardthree">
         <div class="buttons">
           <button  onClick={()=>{upvotePost(data.postId)}}>Upvote</button>
-          <button>{data.upvotes}</button>
+          <p>{data.upvotes}</p>
           <button onClick={()=>{downvotePost(data.postId)}}>Downvote</button>
         </div>
         <div class="content">
