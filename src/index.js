@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { BookContext, BookProvider } from './MCR1/context/BookContext';
 import { HabitContext, HabitProvider } from './MCR2/contexts/HabitContext';
 import { SnacksContext, SnacksProvider } from './MCR3/contexts/SnacksContext';
+import { ForumContext, ForumProvider } from './MCR4/contexts/ForumContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -17,7 +18,9 @@ root.render(
     <BookProvider>
     <HabitProvider>
     <SnacksProvider>
+      <ForumProvider>
     <App />
+    </ForumProvider>
     </SnacksProvider>
     </HabitProvider>
     </BookProvider>
