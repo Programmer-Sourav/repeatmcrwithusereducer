@@ -31,7 +31,14 @@ export default function DataReducer(state, action) {
     case ACTION_TYPES_SNACKS.SORT_BY_INGREDIENTS: 
          return action.payload==="asc" ? {...state, snacks: state.snacks.sort((a,b)=> a.ingredients.sort((a, b) => a > b) > b.ingredients.sort((a, b) => a > b) ? 1 : -1).sort((a,b)=> a > b ? 1 : -1)} : {...state, snacks: state.snacks.sort((a,b)=> a.ingredients.sort((a,b)=>a<b)<b.ingredients.sort((a,b)=>a<b) ? 1 : -1)}    
     case ACTION_TYPES_SNACKS.SEARCH: 
-         const filtered = state.snacks.filter((snack)=>(snack.product_name.toLowerCase().includes(action.payload.toLowerCase())))
+   
+     const filtered = state.snacks.filter((snack)=>(snack.product_name.toLowerCase().includes(action.payload.toLowerCase())) || (
+          snack.ingredients.find(ingredient =>
+            ingredient.toLowerCase().includes(action.payload.toLowerCase())
+          )))
+    
+     console.log(345, filtered)
+    
          return{...state, search: action.payload, searchedList: [...filtered]}
     default: 
         return state                             
