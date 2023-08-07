@@ -27,7 +27,7 @@ export default function Checkboxpractice(){
    
    if(checkedState.length>0)
    filteredNotes = notesList.filter((note)=>checkedState.includes(note.priority))
-   console.log(456, filteredNotes, checkedState)
+
     return(
         <div> 
             <h1>Checkbox</h1>
