@@ -9,6 +9,7 @@ import Forum from './MCR4/pages/Forum';
 import ReceipeHome from './MCR5/pages/ReceipeHome';
 import ReceipeDetails from './MCR5/components/ReceipeDetails';
 import ReceipeDisplay from './MCR5/contexts/ReceipeDisplay';
+import Checkboxpractice from './Checkbox/pages/Checkboxpractice';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/forum' element={<Forum/>}/>
         <Route path='/receipehome' element={<ReceipeHome/>}/>
         <Route path='/receipe-details/:id' element={<ReceipeDisplay/>}/>
+        <Route path='/checkbox' element={<Checkboxpractice/>}/>
       </Routes>
     
     </div>
