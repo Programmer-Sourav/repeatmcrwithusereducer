@@ -2,7 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import AddReceipeModal from "../components/AddReceipeModal";
 import { useContext } from "react";
 import { ReceipeContext } from "../contexts/ReceipeContext";
-import ReceipeDetails from "./ReceipeDetails";
+import ReceipeDetails from "../components/ReceipeDetails";
 
 export default function ReceipeHome(){
 

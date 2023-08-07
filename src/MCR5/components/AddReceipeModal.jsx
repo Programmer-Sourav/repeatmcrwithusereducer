@@ -55,11 +55,13 @@ import { ACTION_TYPES_RECEIPE } from "../reducer/ReceipeReducer";
     }
 
     const addReceipeDetails = (receipeName, cuisineType, ingredients, instructions) =>{
-          const receipeObj = {
+          
+     const ingredientsArray = ingredients.split(',')
+      const receipeObj = {
               "id": receipestate.length+1, 
               "receipe": receipeName, 
               "type": cuisineType,
-              "ingredients": ingredients, 
+              "ingredients": ingredientsArray, 
               "instructions": instructions
           }
          dispatch({type: ACTION_TYPES_RECEIPE.ADD_RECEIPE, payload: receipeObj}) 

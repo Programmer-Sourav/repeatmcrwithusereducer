@@ -7,7 +7,8 @@ import HabitMain from './MCR2/pages/HabitMain';
 import SnacksIndex from './MCR3/pages/SnacksIndex';
 import Forum from './MCR4/pages/Forum';
 import ReceipeHome from './MCR5/pages/ReceipeHome';
-import ReceipeDetails from './MCR5/pages/ReceipeDetails';
+import ReceipeDetails from './MCR5/components/ReceipeDetails';
+import ReceipeDisplay from './MCR5/contexts/ReceipeDisplay';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path='/snacksindex' element={<SnacksIndex/>}/>
         <Route path='/forum' element={<Forum/>}/>
         <Route path='/receipehome' element={<ReceipeHome/>}/>
-        <Route path='/receipe-details' element={<ReceipeDetails/>}/>
+        <Route path='/receipe-details/:id' element={<ReceipeDisplay/>}/>
       </Routes>
     
     </div>

@@ -1,0 +1,32 @@
+.cardthree {
+    width: 752px;
+    height: 512px;
+    background: honeydew;
+    box-shadow: indigo;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .image {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    
+  }
+ 
+  
+  .content {
+    padding: 16px;
+  }
+  
+  .content h2 {
+    margin-bottom: 16px;
+  }
+  
+  .content p {
+    color: royalblue;
+    font-size: 16px;
+    margin: 16px;
+  }
+  
