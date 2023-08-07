@@ -8,6 +8,7 @@ export default function ReceipeHome(){
 
     const { dispatch, receipestate} = useContext(ReceipeContext)
 
+    console.log(123, receipestate)
     return(
         <div>
             {

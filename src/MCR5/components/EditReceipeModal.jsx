@@ -56,8 +56,9 @@ import { ACTION_TYPES_RECEIPE } from "../reducer/ReceipeReducer";
        setInstructions(e.target.value)
     }
 
-    const editReceipeDetails = (receipeName, cuisineType, ingredients, instructions) =>{
+    const editReceipeDetails = (itemId, receipeName, cuisineType, ingredients, instructions) =>{
           const receipeObj = {
+              "id" : itemId, 
               "receipe": receipeName, 
               "type": cuisineType,
               "ingredients": ingredients, 
@@ -81,7 +82,7 @@ import { ACTION_TYPES_RECEIPE } from "../reducer/ReceipeReducer";
             <input type="text" value={cuisineType} placeholder="Cuisine Type" onChange={(e)=>{onChnageCuisineType(e)}}></input>
             <textarea column="6" row="10" value={ingredients} placeholder="Ingredients" onChange={(e)=>{onChangeIngredients(e)}}/>
             <textarea column="6" row="10" value={instructions} placeholder="Instructions" onChange={(e)=>{onChangeInstructions(e)}}/>
-            <button onClick={()=>{editReceipeDetails(receipeName, cuisineType, ingredients, instructions)}}>Add Receipe Details</button>
+            <button onClick={()=>{editReceipeDetails(data.id, receipeName, cuisineType, ingredients, instructions)}}>Add Receipe Details</button>
            </ModalBody>
 
          <ModalFooter>
