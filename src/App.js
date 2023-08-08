@@ -10,6 +10,7 @@ import ReceipeHome from './MCR5/pages/ReceipeHome';
 import ReceipeDetails from './MCR5/components/ReceipeDetails';
 import ReceipeDisplay from './MCR5/contexts/ReceipeDisplay';
 import Checkboxpractice from './Checkbox/pages/Checkboxpractice';
+import Practice1 from './Practice1';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Route path='/receipe-details/:id' element={<ReceipeDisplay/>}/>
         <Route path='/checkbox' element={<Checkboxpractice/>}/>
       </Routes>
-    
+     <Practice1/>
     </div>
   );
 }
