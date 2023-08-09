@@ -53,10 +53,36 @@ const findBookWithMoreThan500Pages = (books) =>{
 // 9. Write an ES6 function that takes an array  of objects with name, role, and array of hours which represents the time the person spends on the server each day. Find the person who is the most active in the community and spends most of the time in it.
 const mostActiveMember = (community) =>{
   //steps: reduce() on hours for each user, reduce() to compare maximum
+  // const result = community.map((member)=>({...member, totalHours: member.hours.reduce((acc, eachItemInHoursArray)=>(acc+eachItemInHoursArray), 0)}))
+  // console.log(result)
+  // const mostActive = result.reduce((acc, currentResult)=>(acc>currentResult.totalHours ? acc : currentResult.totalHours), 0) 
+
+  const result = community.map(member => ({
+    ...member,
+    totalHours: member.hours.reduce((acc, eachItemInHoursArray) => acc + eachItemInHoursArray, 0)
+  }));
+  
+  const mostActive = result.reduce((acc, currentResult) =>
+    acc.totalHours > currentResult.totalHours ? acc : currentResult, result[0]);
+  
+  return mostActive
+  
 }
+
+//Write an ES6 function that takes an array of objects with name, role and array of hours which represents the time a person spends on the server each day. Give the tag of regular to students who are active in the community and spends more than 20 hours a week.
+const tagRegularStudents = (community) =>{
+  const result = community.map(member => ({
+    ...member,
+    totalHours: member.hours.reduce((acc, eachItemInHoursArray) => acc + eachItemInHoursArray, 0)
+  }));
+  
+  const updated = result.map((eachItem)=>(eachItem.totalHours>10 && eachItem.role==="student" ? {...eachItem, tag: "regular"} : eachItem))
+  return updated
+}
+
 return(
-        <div>
-            {console.log(capitalizeLeters([
+  <div>
+   {console.log(capitalizeLeters([
   {
     name: "rain",
     sound: "tap tap tap"
@@ -139,6 +165,19 @@ return(
 
 {
     console.log(mostActiveMember([
+        { name: "Raju", role: "student", hours: [1, 2, 3, 1, 2, 3, 0] },
+        { name: "Aakash", role: "mentor", hours: [1, 2, 3, 1, 2, 3, 0] },
+        { name: "Ramesh", role: "student", hours: [1, 2, 3, 1, 2, 3, 3] },
+        { name: "Jiten", role: "TA", hours: [2, 2, 3, 5, 2, 3, 0] },
+        { name: "Harsh", role: "student", hours: [1, 7, 3, 2, 2, 3, 0] },
+        { name: "Akshay", role: "student", hours: [1, 6, 3, 1, 2, 3, 0] },
+        { name: "Rohan", role: "mentor", hours: [1, 2, 3, 12, 2, 3, 0] },
+        { name: "Mohan", role: "student", hours: [1, 8, 3, 0, 2, 3, 0] }
+      ]))
+}
+
+{
+    console.log(tagRegularStudents([
         { name: "Raju", role: "student", hours: [1, 2, 3, 1, 2, 3, 0] },
         { name: "Aakash", role: "mentor", hours: [1, 2, 3, 1, 2, 3, 0] },
         { name: "Ramesh", role: "student", hours: [1, 2, 3, 1, 2, 3, 3] },
