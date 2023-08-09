@@ -36,9 +36,24 @@ const incrementSalaryAndPromote = (arr) =>{
 // 7. Write an ES6 function that takes an object of two arrays of objects with name salary, role and workExperience, and returns a new array of employees having a role as QA in all teams
 
 const getQA = (teams) =>{
-
+     let qaEmployees = []
+      for(const team of (Object.values(teams))){
+        const qaMembers = team.filter((employee)=>(employee.role.toLowerCase()=== 'qa'))
+        qaEmployees = [...qaEmployees, ...qaMembers]
+      }
+    return qaEmployees
 }
 
+// 8. Write an ES6 function that takes an array of objects representing books with properties title, author and pageCount. Return the first book object that has more than 500 pages.
+
+const findBookWithMoreThan500Pages = (books) =>{
+   return books.filter((book)=>book.pageCount>500)
+}
+
+// 9. Write an ES6 function that takes an array  of objects with name, role, and array of hours which represents the time the person spends on the server each day. Find the person who is the most active in the community and spends most of the time in it.
+const mostActiveMember = (community) =>{
+  //steps: reduce() on hours for each user, reduce() to compare maximum
+}
 return(
         <div>
             {console.log(capitalizeLeters([
@@ -107,6 +122,33 @@ return(
     { name: "Frank", salary: 65000, role: "developer", workExperience: 2 }
   ]
 }))}
+
+
+{
+    console.log(findBookWithMoreThan500Pages([
+        { title: "The Lord of the Rings", author: "J.R.R. Tolkien", pageCount: 1178 },
+        { title: "To Kill a Mockingbird", author: "Harper Lee", pageCount: 281 },
+        {
+          title: "The Hitchhiker's Guide to the Galaxy",
+          author: "Douglas Adams",
+          pageCount: 193
+        },
+        { title: "The Name of the Wind", author: "Patrick Rothfuss", pageCount: 662 }
+      ]))
+}
+
+{
+    console.log(mostActiveMember([
+        { name: "Raju", role: "student", hours: [1, 2, 3, 1, 2, 3, 0] },
+        { name: "Aakash", role: "mentor", hours: [1, 2, 3, 1, 2, 3, 0] },
+        { name: "Ramesh", role: "student", hours: [1, 2, 3, 1, 2, 3, 3] },
+        { name: "Jiten", role: "TA", hours: [2, 2, 3, 5, 2, 3, 0] },
+        { name: "Harsh", role: "student", hours: [1, 7, 3, 2, 2, 3, 0] },
+        { name: "Akshay", role: "student", hours: [1, 6, 3, 1, 2, 3, 0] },
+        { name: "Rohan", role: "mentor", hours: [1, 2, 3, 12, 2, 3, 0] },
+        { name: "Mohan", role: "student", hours: [1, 8, 3, 0, 2, 3, 0] }
+      ]))
+}
         </div>
     )
 }
