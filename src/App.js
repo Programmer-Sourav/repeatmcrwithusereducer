@@ -16,6 +16,7 @@ import PracticeInput from './Basics/PracticeInput';
 import CountDownTimer from './Basics/CountDownTimer';
 import CountDownTimer2 from './Basics/CountDownTimer2';
 import AddRemoveInList from './Basics/AddRemoveInList';
+import Practice from './Basics/Practice';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path='/countdowntimer' element={<CountDownTimer/>}/>
         <Route path='/countdowntimertwo' element={<CountDownTimer2/>}/>
         <Route path='/addremove' element={<AddRemoveInList/>}/>
+        <Route path='/basicreact' element={<Practice/>}/>
       </Routes>
      <Practice1/>
      <Practice2/>
