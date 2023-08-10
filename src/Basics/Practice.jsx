@@ -13,6 +13,12 @@ export default function Practice() {
                   engineering: [],
                 },
               };
+
+    const students = [
+                { name: 'Ajay', score: 85 },
+                { name: 'Mou', score: 92 },
+                { name: 'Bilu', score: 68 },
+              ];          
     const [salesTeam, setSalesTeam] = useState(company.departments.sales)
     const [engineeringTeam, setEngineeringTeam] = useState(company.departments.engineering)
     
@@ -37,6 +43,12 @@ export default function Practice() {
        setEngineeringTeam([...engineeringTeam, employee])
     }
 
+    const [student, setStudent]  = useState(students)
+    const sortStudents = () =>{
+       const result =  [...student].sort((s1,s2)=>s2.score>s1.score ? 1: -1)
+       setStudent(result)
+    }
+   
     return(
         <div>
          {
@@ -48,7 +60,7 @@ export default function Practice() {
 
          <button onClick={()=>addAnEmployeToSales()}>Add To Sales</button>
          <button onClick={()=>addAnEmployeeToEngineering()}>Add To Engineering</button>
-         {
+         
             <p>Sales Team: {salesTeam.map((person)=>(
                 <li>{person.id} -   {person.name} -   {person.age}  -  {person.location}</li>
             ))}
@@ -61,7 +73,12 @@ export default function Practice() {
             <button onClick={()=> {addEmployee("sales", {id: 1, name: "Sourav", age: "03", location: "Agartala"})}}>Add Employee</button>
            
             </p>
-         }
+            {
+                student.map((eachStudent)=>(
+                   <li>{eachStudent.name} - {eachStudent.score}</li> 
+                ))
+            }
+            <button onClick={()=>{sortStudents()}}>Sort On Score</button>
         </div>
     )
 }
