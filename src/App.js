@@ -14,6 +14,7 @@ import Practice1 from './Practice1';
 import Practice2 from './Practice2';
 import PracticeInput from './Basics/PracticeInput';
 import CountDownTimer from './Basics/CountDownTimer';
+import CountDownTimer2 from './Basics/CountDownTimer2';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/checkbox' element={<Checkboxpractice/>}/>
         <Route path='/practice-basics' element={<PracticeInput/>}/>
         <Route path='/countdowntimer' element={<CountDownTimer/>}/>
+        <Route path='/countdowntimertwo' element={<CountDownTimer2/>}/>
       </Routes>
      <Practice1/>
      <Practice2/>
