@@ -16,16 +16,26 @@ export default function CountDownTimer() {
     //     return () => clearInterval(interval)
     // },[timerValue])
 
+    // useEffect(()=>{
+        
+    //     const interval = setInterval(()=>{
+     
+    //           setTimerValue(prevTimerValue =>{
+    //                if(prevTimerValue>0){
+    //                 return prevTimerValue - 1
+    //                }
+    //                return prevTimerValue
+    //           })
+    //     },1000)
+    //     return (()=>clearInterval(interval))
+    // }, [])
+
+    //with conditional 
     useEffect(()=>{
         
         const interval = setInterval(()=>{
      
-              setTimerValue(prevTimerValue =>{
-                   if(prevTimerValue>0){
-                    return prevTimerValue - 1
-                   }
-                   return prevTimerValue
-              })
+              setTimerValue(prevTimerValue =>(prevTimerValue>0 ? prevTimerValue-1 : prevTimerValue))
         },1000)
         return (()=>clearInterval(interval))
     }, [])
