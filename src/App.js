@@ -12,6 +12,8 @@ import ReceipeDisplay from './MCR5/contexts/ReceipeDisplay';
 import Checkboxpractice from './Checkbox/pages/Checkboxpractice';
 import Practice1 from './Practice1';
 import Practice2 from './Practice2';
+import PracticeInput from './Basics/PracticeInput';
+import CountDownTimer from './Basics/CountDownTimer';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path='/receipehome' element={<ReceipeHome/>}/>
         <Route path='/receipe-details/:id' element={<ReceipeDisplay/>}/>
         <Route path='/checkbox' element={<Checkboxpractice/>}/>
+        <Route path='/practice-basics' element={<PracticeInput/>}/>
+        <Route path='/countdowntimer' element={<CountDownTimer/>}/>
       </Routes>
      <Practice1/>
      <Practice2/>
