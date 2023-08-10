@@ -5,16 +5,30 @@ export default function CountDownTimer() {
     const [timerValue, setTimerValue] = useState(10)
 
 
-    useEffect(()=>{
+    // useEffect(()=>{
       
-        const interval = setInterval(()=>{
-            if(timerValue>0){
-            setTimerValue(timerValue-1)
-            }
-        }, 1000)
+    //     const interval = setInterval(()=>{
+    //         if(timerValue>0){
+    //         setTimerValue(timerValue-1)
+    //         }
+    //     }, 1000)
 
-        return () => clearInterval(interval)
-    },[timerValue])
+    //     return () => clearInterval(interval)
+    // },[timerValue])
+
+    useEffect(()=>{
+        
+        const interval = setInterval(()=>{
+     
+              setTimerValue(prevTimerValue =>{
+                   if(prevTimerValue>0){
+                    return prevTimerValue - 1
+                   }
+                   return prevTimerValue
+              })
+        },1000)
+        return (()=>clearInterval(interval))
+    }, [])
 
     return(
         <div> 
