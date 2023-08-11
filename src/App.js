@@ -17,6 +17,7 @@ import CountDownTimer from './Basics/CountDownTimer';
 import CountDownTimer2 from './Basics/CountDownTimer2';
 import AddRemoveInList from './Basics/AddRemoveInList';
 import Practice from './Basics/Practice';
+import TabComponent from './TabsA3/TabComponent';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
       </Routes>
      <Practice1/>
      <Practice2/>
+     <TabComponent/>
     </div>
   );
 }

@@ -11,8 +11,8 @@ export const ACTION_TYPES = {
 export default function Reducer (state, action){
   switch(action.type){
     case ACTION_TYPES.INITIALIZE:
-        return {...state}
+        return {...state, data: action.payload}
     case ACTION_TYPES.CURRENT_TAB: 
-         return {...state}     
+         return {...state, currentTab: action.payload}     
   }
 }
