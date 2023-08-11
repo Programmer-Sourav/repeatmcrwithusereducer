@@ -18,6 +18,10 @@ import CountDownTimer2 from './Basics/CountDownTimer2';
 import AddRemoveInList from './Basics/AddRemoveInList';
 import Practice from './Basics/Practice';
 import TabComponent from './TabsA3/TabComponent';
+import GroceryList from './Q2A3/GroceryList';
+import Chatwindow from './Q5A3/Chatwindow';
+import TweetScreen from './Q6A3/TweetScreen';
+import MovieSelection from './Q7A3/MoviesSelection';
 
 function App() {
   return (
@@ -40,6 +44,10 @@ function App() {
      <Practice1/>
      <Practice2/>
      <TabComponent/>
+     <GroceryList/>
+     <Chatwindow/>
+     <TweetScreen/>
+     <MovieSelection/>
     </div>
   );
 }
